@@ -1,0 +1,113 @@
+Hack&Slash:
+  name: 'Hack&Slash'
+  type: 'Dynamic'
+  max-level: 10
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Iron sword'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - ''
+  - '&4Double strike!'
+  - ''
+  - '&cDamage: {attr:damage.value}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 6
+    cost-scale: 0
+    cooldown-base: 8
+    cooldown-scale: -0.05
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Cast-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Cone-b:
+          type: 'target'
+          data:
+            icon-key: ''
+            range-base: 5
+            range-scale: 0
+            angle-base: 60
+            angle-scale: 0
+            group: 'Both'
+            wall: 'False'
+            caster: 'False'
+            max-base: 99
+            max-scale: 0
+          children:
+            Armor Stand Pose-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                head: ''
+                body: ''
+                left-arm: ''
+                right-arm: '0.0,90.0,00'
+                left-leg: ''
+                right-leg: ''
+            Armor Stand Pose-d:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                head: ''
+                body: ''
+                left-arm: ''
+                right-arm: '0.0,30.0,00'
+                left-leg: ''
+                right-leg: ''
+            Armor Stand Pose-e:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                head: ''
+                body: ''
+                left-arm: ''
+                right-arm: '75.0,0.0.0,00'
+                left-leg: ''
+                right-leg: ''
+            Armor Stand Pose-f:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                head: ''
+                body: ''
+                left-arm: ''
+                right-arm: '15.0,0.0.0,00'
+                left-leg: ''
+                right-leg: ''
+            Damage-g:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                type: 'Damage'
+                value-base: 2
+                value-scale: 0.01
+                true: 'True'
+                classifier: 'default'
+                knockback: 'True'
