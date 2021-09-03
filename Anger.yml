@@ -1,0 +1,96 @@
+Anger:
+  name: 'Anger'
+  type: 'Active'
+  max-level: 7
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Red dye'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - ''
+  - '&4Unleash your anger when at'
+  - '&4least 5 seconds into combat'
+  - ''
+  - '&cDamage: {attr:damage.value}'
+  attributes:
+    level-base: 1
+    level-scale: 1
+    cost-base: 5
+    cost-scale: 0
+    cooldown-base: 7
+    cooldown-scale: -0.5
+    mana-base: 10
+    mana-scale: -1
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Cast-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Combat-b:
+          type: 'condition'
+          data:
+            icon-key: ''
+            combat: 'True'
+            seconds: 5
+          children:
+            Area-c:
+              type: 'target'
+              data:
+                icon-key: ''
+                radius-base: 3
+                radius-scale: 0
+                group: 'Both'
+                wall: 'False'
+                caster: 'False'
+                max-base: 99
+                max-scale: 0
+                random: 'False'
+              children:
+                Damage-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: 3
+                    value-scale: 0.5
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                Particle-e:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Villager angry'
+                    arrangement: 'Hemisphere'
+                    radius-base: 4
+                    radius-scale: 0
+                    particles-base: 20
+                    particles-scale: 0
+                    visible-radius: 25
+                    dx: 0
+                    dy: 0
+                    dz: 0
+                    amount: 1
+                    speed: 0.1
+                    forward: 0
+                    upward: 0
+                    right: 0
