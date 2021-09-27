@@ -1,0 +1,35 @@
+Fighter:
+  name: 'Fighter'
+  prefix: '&4Fighter'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 99
+  parent: 'Human'
+  needs-permission: 'True'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Strength'
+  icon: 'Iron Sword'
+  icon-data: 0
+  icon-lore:
+  - '&dFighter'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 20
+    health-scale: 0.1
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 5
+    vitality-scale: 0.1
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 3
+    dexterity-scale: 0.1
+    strength-base: 5
+    strength-scale: 0.1
